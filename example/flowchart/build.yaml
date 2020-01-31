@@ -1,0 +1,21 @@
+targets:
+  gojs_flowchart:
+    sources:
+      exclude: ["lib/builder.dart"]
+    builders:
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+        # These are globs for the entrypoints you want to compile.
+        generate_for:
+          - web/**.dart
+        release_options:
+          #only_applied_in_release_mode: true
+          compiler: dart2js
+          # List any dart2js specific args here, or omit it.
+          dart2js_args:
+            - -O4
+            - --minify
+            #- --omit-implicit-check
+            - --trust-primitives
+            - --fast-startup
