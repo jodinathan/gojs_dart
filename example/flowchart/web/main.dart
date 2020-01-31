@@ -178,7 +178,7 @@ void main() {
           ..isPanelMain = true
           ..strokeWidth = 2
           ..stroke = 'gray'
-          ..bind(GoJSBinding('stroke', 'isSelected', allowInterop((sel) {
+          ..bind(GoJSBinding('stroke', 'isSelected', allowInterop((sel, k) {
             return sel ? 'dodgerblue' : 'gray';
           })).ofObject()),
         GoJSShape() // the arrowhead

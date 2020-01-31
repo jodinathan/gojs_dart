@@ -9,7 +9,18 @@
     <title>FlowChart - GoJS and Dart</title>
     <link rel="icon" href="favicon.ico">
     <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
-    <script defer src="main.dart.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+          console.log('Loading dart...', go.Model);
+          var script = document.createElement('script');
+          script.onload = function () {
+              console.log('Dart loaded!');
+          };
+          script.src = 'main.dart.js';
+  
+          document.head.appendChild(script); 
+      }
+      </script>
 </head>
 
 <body>

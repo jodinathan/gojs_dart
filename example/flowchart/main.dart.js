@@ -1027,7 +1027,7 @@ o=J.d(n)
 o.sY(n,!0)
 o.sl(n,2)
 o.sk(n,"gray")
-m=P.F(new F.bz(),{func:1,ret:P.m,args:[,]})
+m=P.F(new F.bz(),{func:1,ret:P.m,args:[,,]})
 o.A(n,H.f(J.d3(new go.Binding("stroke","isSelected",m)),"$ir"))
 m=new go.Shape()
 o=J.d(m)
@@ -1735,7 +1735,9 @@ $R:0,
 $D:function(){return[null,null,null]},
 $S:1}
 F.bz.prototype={
-$1:function(a){return H.c1(H.dA(a))?"dodgerblue":"gray"},
+$2:function(a,b){return H.c1(H.dA(a))?"dodgerblue":"gray"},
+$C:"$2",
+$R:2,
 $S:11}
 F.bB.prototype={
 $3:function(a,b,c){if(!J.c9(a).gba())J.cc(b,"rgba(255,0,255,0.5)")},
@@ -1790,7 +1792,7 @@ t(Z.ag,Z.ai)
 t(Z.al,Z.a0)
 s(Z.al,[Z.t,Z.aj])
 u(P.ar,P.bo)})()
-var v={mangledGlobalNames:{at:"int",w:"double",a8:"num",m:"String",as:"bool",l:"Null",a2:"List"},mangledNames:{},getTypeFromName:getGlobalFromName,metadata:[],types:[{func:1,args:[,]},{func:1,ret:P.l,opt:[,Z.t,,]},{func:1,ret:P.l,opt:[,,,]},{func:1,ret:-1,args:[,]},{func:1,ret:P.l,args:[P.m,,]},{func:1,args:[,P.m]},{func:1,args:[P.m]},{func:1,ret:P.l,args:[,,]},{func:1,ret:P.l,args:[P.z,,]},{func:1,ret:-1,args:[Z.D]},{func:1,ret:Z.N,args:[Z.y,P.w,P.w]},{func:1,ret:P.m,args:[,]}],interceptorsByTag:null,leafTags:null};(function constants(){var u=hunkHelpers.makeConstList
+var v={mangledGlobalNames:{at:"int",w:"double",a8:"num",m:"String",as:"bool",l:"Null",a2:"List"},mangledNames:{},getTypeFromName:getGlobalFromName,metadata:[],types:[{func:1,args:[,]},{func:1,ret:P.l,opt:[,Z.t,,]},{func:1,ret:P.l,opt:[,,,]},{func:1,ret:-1,args:[,]},{func:1,ret:P.l,args:[P.m,,]},{func:1,args:[,P.m]},{func:1,args:[P.m]},{func:1,ret:P.l,args:[,,]},{func:1,ret:P.l,args:[P.z,,]},{func:1,ret:-1,args:[Z.D]},{func:1,ret:Z.N,args:[Z.y,P.w,P.w]},{func:1,ret:P.m,args:[,,]}],interceptorsByTag:null,leafTags:null};(function constants(){var u=hunkHelpers.makeConstList
 C.f=Z.ac.prototype
 C.c=Z.t.prototype
 C.e=Z.aj.prototype
