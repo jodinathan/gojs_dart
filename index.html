@@ -9,6 +9,15 @@
     <title>FlowChart - GoJS and Dart</title>
     <link rel="icon" href="favicon.ico">
     <script src="https://unpkg.com/gojs@2.1.7/release/go-debug.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        console.log('Loading dart...');
+        var script = document.createElement('script');
+        script.src = 'example/flowchart/main.dart.js';
+
+        document.head.appendChild(script); 
+    }
+    </script>
 </head>
 
 <body>
@@ -21,7 +30,5 @@
   </div>
   <div>
 
-  <script defer src="example/flowchart/main.dart.js"></script>
-
-</body>
+</bod>
 </html>
