@@ -13,6 +13,9 @@
     window.onload = function() {
         console.log('Loading dart...');
         var script = document.createElement('script');
+        script.onload = function () {
+            console.log('Dart loaded!');
+        };
         script.src = 'example/flowchart/main.dart.js';
 
         document.head.appendChild(script); 
