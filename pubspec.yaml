@@ -1,0 +1,12 @@
+name: gojs
+description: A Dart interface for GoJS
+version: 0.0.1
+author: Jonathan Rezende <jonathan@jode.com.br>
+environment:
+  sdk: '>= 2.6.0 < 3.0.0'
+
+dependencies:
+  js: ^0.6.1+1
+
+dev_dependencies:
+  
