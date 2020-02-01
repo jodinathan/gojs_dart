@@ -8,4 +8,3 @@ external dynamic get undefined;
 
 @JS('NaN')
 external dynamic get nan;
-

@@ -6,6 +6,7 @@ import 'package:js/js.dart';
 
 typedef LinkEventFn = Function(GoJSLinkEvent e);
 
+/// https://gojs.net/latest/api/symbols/AnimationManager.html
 @JS('AnimationManager')
 class GoJSAnimationManager {
   @JS('None')
@@ -13,6 +14,7 @@ class GoJSAnimationManager {
   external set initialAnimationStyle(dynamic n);
 }
 
+/// https://gojs.net/latest/api/symbols/TextBlock.html
 @JS('TextBlock')
 class GoJSTextBlock extends GoJSGraphObject {
   @JS('WrapFit')
@@ -36,33 +38,40 @@ class GoJSTextBlock extends GoJSGraphObject {
   external set text(String n);
 }
 
+/// https://gojs.net/latest/api/symbols/Tool.html
 @JS('Tool')
 class GoJSTool {}
 
+/// https://gojs.net/latest/api/symbols/ToolManager.html
 @JS('ToolManager')
 class GoJSToolManager extends GoJSTool {
   external GoJSLinkingTool get linkingTool;
   external GoJSRelinkingTool get relinkingTool;
 }
 
+/// https://gojs.net/latest/api/symbols/LinkingBaseTool.html
 @JS('LinkingBaseTool')
 class GoJSLinkingBaseTool {}
 
+/// https://gojs.net/latest/api/symbols/LinkingTool.html
 @JS('LinkingTool')
 class GoJSLinkingTool extends GoJSLinkingBaseTool {
   external GoJSLink get temporaryLink;
 }
 
+/// https://gojs.net/latest/api/symbols/RelinkingTool.html
 @JS('RelinkingTool')
 class GoJSRelinkingTool extends GoJSLinkingBaseTool {
   external GoJSLink get temporaryLink;
 }
 
+/// https://gojs.net/latest/api/symbols/Size.html
 @JS('Size')
 class GoJSSize {
   external factory GoJSSize(dynamic x, dynamic y);
 }
 
+/// https://gojs.net/latest/api/symbols/Geometry.html
 @JS('Geometry')
 class GoJSGeometry {
   external void add(GoJSPathFigure fig);
@@ -70,6 +79,7 @@ class GoJSGeometry {
   external set spot2(GoJSSpot n);
 }
 
+/// https://gojs.net/latest/api/symbols/PathFigure.html
 @JS('PathFigure')
 class GoJSPathFigure {
   external void add(GoJSPathSegment path);
@@ -82,6 +92,7 @@ extension GoJSPathFigureAdvanced on GoJSPathFigure {
       paths.forEach((path) => add(path));
 }
 
+/// https://gojs.net/latest/api/symbols/PathSegment.html
 @JS('PathSegment')
 class GoJSPathSegment {
   @JS('Line')
@@ -90,6 +101,7 @@ class GoJSPathSegment {
   external factory GoJSPathSegment(dynamic type, double x, double y);
 }
 
+/// https://gojs.net/latest/api/symbols/Shape.html
 @JS('Shape')
 class GoJSShape extends GoJSGraphObject {
   external static void defineFigureGenerator(
@@ -136,9 +148,11 @@ class GoJSShape extends GoJSGraphObject {
   external factory GoJSShape();
 }
 
+/// https://gojs.net/latest/api/symbols/Brush.html
 @JS('Brush')
 class GoJSBrush {}
 
+/// https://gojs.net/latest/api/symbols/Binding.html
 @JS('Binding')
 class GoJSBinding {
   external dynamic makeTwoWay([dynamic type]);
@@ -148,18 +162,14 @@ class GoJSBinding {
       [String targetprop, String sourceprop, dynamic conv]);
 }
 
-@JS()
-@anonymous
-class GoJSLocation {
-  external factory GoJSLocation({GoJSSpot locationSpot});
-}
-
+/// https://gojs.net/latest/api/symbols/Point.html
 @JS('Point')
 class GoJSPoint {
   external static dynamic get parse;
   external static dynamic get stringify;
 }
 
+/// https://gojs.net/latest/api/symbols/Palette.html
 @JS('Palette')
 class GoJSPalette {
   external GoJSMap<String, GoJSPart> get nodeTemplateMap;
@@ -174,6 +184,7 @@ class GoJSPalette {
   external factory GoJSPalette([HtmlElement element]);
 }
 
+/// https://gojs.net/latest/api/symbols/Map.html
 @JS('Map')
 class GoJSMap<K, V> {
   external add(K k, V v);
@@ -185,6 +196,7 @@ class GoJSDiagramEvent {
   external GoJSDiagram get diagram;
 }
 
+/// https://gojs.net/latest/api/symbols/Animation.html
 @JS('Animation')
 class GoJSAnimation {
   @JS('EaseOutExpo')
@@ -200,11 +212,13 @@ class GoJSAnimation {
   external void start();
 }
 
+/// https://gojs.net/latest/api/symbols/GraphLinksModel.html
 @JS('GraphLinksModel')
 class GoJSLinksModel extends GoJSModel {
   external factory GoJSLinksModel([Iterable items, Iterable indexed]);
 }
 
+/// https://gojs.net/latest/api/symbols/GraphObject.html
 @JS('GraphObject')
 class GoJSGraphObject {
   external bool get visible;
@@ -218,6 +232,7 @@ class GoJSGraphObject {
   external String get fill;
 }
 
+/// https://gojs.net/latest/api/symbols/Panel.html
 @JS('Panel')
 class GoJSPanel extends GoJSGraphObject {
   @JS('Auto')
@@ -237,16 +252,20 @@ class GoJSPanel extends GoJSGraphObject {
 
 extension GoJSPanelAdvanced on GoJSPanel {
   void addAll(Iterable<GoJSGraphObject> els) {
-    for (var el in els) add(el);
+    for (var el in els) {
+      add(el);
+    }
   }
 }
 
+/// https://gojs.net/latest/api/symbols/Part.html
 @JS('Part')
 class GoJSPart extends GoJSPanel {
   external set locationSpot(GoJSSpot n);
   external GoJSSpot get locationSpot;
 }
 
+/// https://gojs.net/latest/api/symbols/Link.html
 @JS('Link')
 class GoJSLink extends GoJSPart {
   @JS('Orthogonal')
@@ -283,17 +302,21 @@ class GoJSLink extends GoJSPart {
   external set mouseLeave(Function([dynamic ev, GoJSLink link, dynamic k]) n);
 }
 
+/// https://gojs.net/latest/api/symbols/Node.html
 @JS('Node')
 class GoJSNode extends GoJSPart {}
+
 
 @JS()
 class GoJSLinkEvent {}
 
+/// https://gojs.net/latest/api/symbols/Margin.html
 @JS('Margin')
 class GoJSMargin {
   external factory GoJSMargin(int x, int y, int w, int z);
 }
 
+/// https://gojs.net/latest/api/symbols/Spot.html
 @JS('Spot')
 class GoJSSpot {
   @JS('BottomRight')
@@ -321,7 +344,7 @@ class GoJSSpot {
   @JS('BottomSide')
   external static GoJSSpot get bottomSide;
 
-  external bool equals(GoJSSpot);
+  external bool equals(GoJSSpot n);
   external int get x;
   external int get y;
   external int get offsetX;
@@ -338,6 +361,7 @@ class GoJSBrushOptions {
   external factory GoJSBrushOptions({@JS('0') String c0, @JS('1') String c1});
 }
 
+/// https://gojs.net/latest/api/symbols/Diagram.html
 @JS('Diagram')
 class GoJSDiagram {
   external GoJSModel get model;
@@ -364,6 +388,7 @@ class GoJSDiagram {
   external factory GoJSDiagram(HtmlElement element);
 }
 
+/// https://gojs.net/latest/api/symbols/Model.html
 @JS('Model')
 class GoJSModel {
   external static GoJSModel fromJson(String buf);
