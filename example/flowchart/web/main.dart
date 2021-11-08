@@ -1,4 +1,4 @@
-import 'package:gojs/gojs.dart';
+import 'package:gojs/gojs.dart' as go;
 import 'package:js/js.dart';
 import 'dart:html' as html;
 
@@ -7,151 +7,151 @@ void main() {
   var palette = html.document.getElementById('palette');
 
   try {
-    var god = GoJSDiagram(diagram)
+    var god = go.Diagram(diagram!)
       ..linkDrawn = allowInterop(showLinkLabel)
       ..linkRelinked = allowInterop(showLinkLabel);
 
     god.nodeTemplateMap.add(
         '', // the default category
         nodeStyle()
-          ..type = GoJSPanel.table
+          ..type = go.Panel.table
           ..addAll([
-            GoJSPanel()
-              ..type = GoJSPanel.auto
+            go.Panel()
+              ..type = go.Panel.auto
               ..addAll([
-                GoJSShape()
+                go.Shape()
                   ..figure = 'Rectangle'
                   ..fill = '#282c34'
                   ..stroke = '#00A9C9'
                   ..strokeWidth = 3.5
-                  ..bind(GoJSBinding('figure', 'figure')),
+                  ..bind(go.Binding('figure', 'figure')),
                 textStyle()
                   ..margin = 8
-                  ..maxSize = GoJSSize(160, nan)
-                  ..wrap = GoJSTextBlock.wrapFit
+                  ..maxSize = go.Size(160, go.nan)
+                  ..wrap = go.TextBlock.wrapFit
                   ..editable = true
-                  ..bind(GoJSBinding('text').makeTwoWay())
+                  ..bind(go.Binding('text').makeTwoWay())
               ]),
-            makePort('T', GoJSSpot.top, GoJSSpot.topSide, false, true),
-            makePort('L', GoJSSpot.left, GoJSSpot.leftSide, true, true),
-            makePort('R', GoJSSpot.right, GoJSSpot.rightSide, true, true),
-            makePort('B', GoJSSpot.bottom, GoJSSpot.bottomSide, true, false)
+            makePort('T', go.Spot.top, go.Spot.topSide, false, true),
+            makePort('L', go.Spot.left, go.Spot.leftSide, true, true),
+            makePort('R', go.Spot.right, go.Spot.rightSide, true, true),
+            makePort('B', go.Spot.bottom, go.Spot.bottomSide, true, false)
           ]));
 
     god.nodeTemplateMap.add(
         'Conditional',
         nodeStyle()
-          ..type = GoJSPanel.table
+          ..type = go.Panel.table
           ..addAll([
-            GoJSPanel()
-              ..type = GoJSPanel.auto
+            go.Panel()
+              ..type = go.Panel.auto
               ..addAll([
-                GoJSShape()
+                go.Shape()
                   ..figure = 'Diamond'
                   ..fill = '#282c34'
                   ..stroke = '#00A9C9'
                   ..strokeWidth = 3.5
-                  ..bind(GoJSBinding('figure', 'figure')),
+                  ..bind(go.Binding('figure', 'figure')),
                 textStyle()
                   ..margin = 8
-                  ..maxSize = GoJSSize(160, nan)
-                  ..wrap = GoJSTextBlock.wrapFit
+                  ..maxSize = go.Size(160, go.nan)
+                  ..wrap = go.TextBlock.wrapFit
                   ..editable = true
-                  ..bind(GoJSBinding('text').makeTwoWay())
+                  ..bind(go.Binding('text').makeTwoWay())
               ]),
-            makePort('T', GoJSSpot.top, GoJSSpot.top, false, true),
-            makePort('L', GoJSSpot.left, GoJSSpot.left, true, true),
-            makePort('R', GoJSSpot.right, GoJSSpot.right, true, true),
-            makePort('B', GoJSSpot.bottom, GoJSSpot.bottom, true, false)
+            makePort('T', go.Spot.top, go.Spot.top, false, true),
+            makePort('L', go.Spot.left, go.Spot.left, true, true),
+            makePort('R', go.Spot.right, go.Spot.right, true, true),
+            makePort('B', go.Spot.bottom, go.Spot.bottom, true, false)
           ]));
 
     god.nodeTemplateMap.add(
         'Start',
         nodeStyle()
-          ..type = GoJSPanel.table
+          ..type = go.Panel.table
           ..addAll([
-            GoJSPanel()
-              ..type = GoJSPanel.auto
+            go.Panel()
+              ..type = go.Panel.auto
               ..addAll([
-                GoJSShape()
+                go.Shape()
                   ..figure = 'Circle'
                   ..fill = '#282c34'
                   ..stroke = '#09d3ac'
                   ..strokeWidth = 3.5
-                  ..desiredSize = GoJSSize(70, 70),
-                textStyle('Start')..bind(GoJSBinding('text'))
+                  ..desiredSize = go.Size(70, 70),
+                textStyle('Start')..bind(go.Binding('text'))
               ]),
-            makePort('L', GoJSSpot.left, GoJSSpot.left, true, false),
-            makePort('R', GoJSSpot.right, GoJSSpot.right, true, false),
-            makePort('B', GoJSSpot.bottom, GoJSSpot.bottom, true, false)
+            makePort('L', go.Spot.left, go.Spot.left, true, false),
+            makePort('R', go.Spot.right, go.Spot.right, true, false),
+            makePort('B', go.Spot.bottom, go.Spot.bottom, true, false)
           ]));
 
     god.nodeTemplateMap.add(
         'End',
         nodeStyle()
-          ..type = GoJSPanel.table
+          ..type = go.Panel.table
           ..addAll([
-            (GoJSPanel()
-              ..type = GoJSPanel.auto
+            (go.Panel()
+              ..type = go.Panel.auto
               ..addAll([
-                GoJSShape()
+                go.Shape()
                   ..figure = 'Circle'
                   ..fill = '#282c34'
                   ..stroke = '#DC3C00'
                   ..strokeWidth = 3.5
-                  ..desiredSize = GoJSSize(70, 70),
-                textStyle('End')..bind(GoJSBinding('text'))
+                  ..desiredSize = go.Size(70, 70),
+                textStyle('End')..bind(go.Binding('text'))
               ])),
-            makePort('T', GoJSSpot.top, GoJSSpot.top, false, true),
-            makePort('L', GoJSSpot.left, GoJSSpot.left, false, true),
-            makePort('R', GoJSSpot.right, GoJSSpot.right, false, true)
+            makePort('T', go.Spot.top, go.Spot.top, false, true),
+            makePort('L', go.Spot.left, go.Spot.left, false, true),
+            makePort('R', go.Spot.right, go.Spot.right, false, true)
           ]));
 
-    GoJSShape.defineFigureGenerator('File', allowInterop((shape, w, h) {
-      var geo = GoJSGeometry();
-      var fig = GoJSPathFigure(0, 0, true); // starting point
+    go.Shape.defineFigureGenerator('File', allowInterop((shape, w, h) {
+      var geo = go.Geometry();
+      var fig = go.PathFigure(0, 0, true); // starting point
       geo.add(fig);
       fig.addAll([
-        GoJSPathSegment(GoJSPathSegment.line, .75 * w, 0),
-        GoJSPathSegment(GoJSPathSegment.line, w, .25 * h),
-        GoJSPathSegment(GoJSPathSegment.line, w, h),
-        GoJSPathSegment(GoJSPathSegment.line, 0, h).close()
+        go.PathSegment(go.PathSegment.line, .75 * w, 0),
+        go.PathSegment(go.PathSegment.line, w, .25 * h),
+        go.PathSegment(go.PathSegment.line, w, h),
+        go.PathSegment(go.PathSegment.line, 0, h).close()
       ]);
-      var fig2 = GoJSPathFigure(.75 * w, 0, false);
+      var fig2 = go.PathFigure(.75 * w, 0, false);
       geo.add(fig2);
       // The Fold
       fig2.addAll([
-        GoJSPathSegment(GoJSPathSegment.line, .75 * w, .25 * h),
-        GoJSPathSegment(GoJSPathSegment.line, w, .25 * h)
+        go.PathSegment(go.PathSegment.line, .75 * w, .25 * h),
+        go.PathSegment(go.PathSegment.line, w, .25 * h)
       ]);
       geo
-        ..spot1 = GoJSSpot(0, .25)
-        ..spot2 = GoJSSpot.bottomRight;
+        ..spot1 = go.Spot(0, .25)
+        ..spot2 = go.Spot.bottomRight;
       return geo;
     }));
 
     god.nodeTemplateMap.add(
         'Comment',
         nodeStyle()
-          ..type = GoJSPanel.auto
+          ..type = go.Panel.auto
           ..addAll([
-            GoJSShape()
+            go.Shape()
               ..figure = 'File'
               ..fill = '#282c34'
               ..stroke = '#DEE0A3'
               ..strokeWidth = 3,
             textStyle()
               ..margin = 8
-              ..maxSize = GoJSSize(200, nan)
-              ..wrap = GoJSTextBlock.wrapFit
+              ..maxSize = go.Size(200, go.nan)
+              ..wrap = go.TextBlock.wrapFit
               ..textAlign = 'center'
               ..editable = true
-              ..bind(GoJSBinding('text').makeTwoWay())
+              ..bind(go.Binding('text').makeTwoWay())
           ]));
 
-    god.linkTemplate = GoJSLink()
-      ..routing = GoJSLink.avoidsNodes
-      ..curve = GoJSLink.jumpOver
+    god.linkTemplate = go.Link()
+      ..routing = go.Link.avoidsNodes
+      ..curve = go.Link.jumpOver
       ..corner = 5
       ..toShortLength = 4
       ..relinkableFrom = true
@@ -160,55 +160,55 @@ void main() {
       ..resegmentable = true
       // mouse-overs subtly highlight links:
       ..mouseEnter = allowInterop(([e, link, k]) {
-        (link.findObject('HIGHLIGHT') as GoJSShape).stroke =
+        (link.findObject('HIGHLIGHT') as go.Shape).stroke =
             'rgba(30,144,255,0.2)';
       })
       ..mouseLeave = allowInterop(([e, link, k]) {
-        (link.findObject('HIGHLIGHT') as GoJSShape).stroke = 'transparent';
+        (link.findObject('HIGHLIGHT') as go.Shape).stroke = 'transparent';
       })
       ..selectionAdorned = false
-      ..bind(GoJSBinding('points').makeTwoWay())
+      ..bind(go.Binding('points').makeTwoWay())
       ..addAll([
-        GoJSShape() // the highlight shape, normally transparent
+        go.Shape() // the highlight shape, normally transparent
           ..isPanelMain = true
           ..strokeWidth = 8
           ..stroke = 'transparent'
           ..name = 'HIGHLIGHT',
-        GoJSShape() // the link path shape
+        go.Shape() // the link path shape
           ..isPanelMain = true
           ..strokeWidth = 2
           ..stroke = 'gray'
-          ..bind(GoJSBinding('stroke', 'isSelected', allowInterop((sel, k) {
+          ..bind(go.Binding('stroke', 'isSelected', allowInterop((sel, [k]) {
             return sel ? 'dodgerblue' : 'gray';
           })).ofObject()),
-        GoJSShape() // the arrowhead
+        go.Shape() // the arrowhead
           ..toArrow = 'standard'
           ..strokeWidth = 0
           ..fill = 'gray',
-        GoJSPanel()
-          ..type = GoJSPanel.auto
+        go.Panel()
+          ..type = go.Panel.auto
           ..visible = false
           ..name = 'LABEL'
           ..segmentIndex = 2
           ..segmentFraction = 0.5
-          ..bind(GoJSBinding('visible', 'visible').makeTwoWay())
+          ..bind(go.Binding('visible', 'visible').makeTwoWay())
           ..addAll([
-            GoJSShape()
+            go.Shape()
               ..figure = 'RoundedRectangle' // the label shape
               ..fill = '#F8F8F8'
               ..strokeWidth = 0,
-            GoJSTextBlock()
+            go.TextBlock()
               ..text = 'Yes'
               ..textAlign = 'center'
               ..font = '10pt helvetica, arial, sans-serif'
               ..stroke = '#333333'
               ..editable = true
-              ..bind(GoJSBinding('text').makeTwoWay())
+              ..bind(go.Binding('text').makeTwoWay())
           ])
       ]);
 
-    god.toolManager.linkingTool.temporaryLink.routing = GoJSLink.orthogonal;
-    god.toolManager.relinkingTool.temporaryLink.routing = GoJSLink.orthogonal;
+    god.toolManager.linkingTool.temporaryLink.routing = go.Link.orthogonal;
+    god.toolManager.relinkingTool.temporaryLink.routing = go.Link.orthogonal;
 
     // load
     var load = '''
@@ -245,7 +245,7 @@ void main() {
       ]}
       ''';
 
-    god.model = GoJSModel.fromJson(load);
+    god.model = go.Model.fromJson(load);
 
     var buf = '''
               { "class": "go.GraphLinksModel",
@@ -256,12 +256,12 @@ void main() {
               {"category": "Comment", "text": "Comment"}]
               }
           ''';
-    GoJSPalette(palette)
+    go.Palette(palette!)
       ..nodeTemplateMap = god.nodeTemplateMap
-      //..model = GoJSLinksModel(lm)
-      ..model = GoJSModel.fromJson(buf)
+      //..model = go.LinksModel(lm)
+      ..model = go.Model.fromJson(buf)
       ..initialAnimationStarting = allowInterop(animateFadeDown)
-      ..animationManager.initialAnimationStyle = GoJSAnimationManager.none;
+      ..animationManager.initialAnimationStyle = go.AnimationManager.none;
   } catch (e) {
     print('FlowChart example error: $e');
     html.window.console.error(e);
@@ -272,10 +272,10 @@ void main() {
 
 void animateFadeDown(e) {
   var diagram = e.diagram;
-  var animation = GoJSAnimation();
+  var animation = go.Animation();
   animation.isViewportUnconstrained =
       true; // So Diagram positioning rules let the animation start off-screen
-  animation.easing = GoJSAnimation.easeOutExpo;
+  animation.easing = go.Animation.easeOutExpo;
   animation.duration = 900;
   // Fade "down", in other words, fade in from above
   animation.add(diagram, 'position', diagram.position.copy().offset(0, 200),
@@ -292,31 +292,31 @@ void showLinkLabel(e) {
   }
 }
 
-GoJSNode nodeStyle() => GoJSNode()
-  ..locationSpot = GoJSSpot.center
-  ..bind(GoJSBinding('location', 'loc', GoJSPoint.parse)
-      .makeTwoWay(GoJSPoint.stringify));
+go.Node nodeStyle() => go.Node()
+  ..locationSpot = go.Spot.center
+  ..bind(go.Binding('location', 'loc', go.Point.parse)
+      .makeTwoWay(go.Point.stringify));
 
-GoJSTextBlock textStyle([String text]) => GoJSTextBlock()
+go.TextBlock textStyle([String? text]) => go.TextBlock()
   ..font = 'bold 11pt Lato, Helvetica, Arial, sans-serif'
   ..stroke = '#F8F8F8'
-  ..text = text ?? undefined;
+  ..text = text ?? go.undefined;
 
-GoJSShape makePort(
-    String name, GoJSSpot align, GoJSSpot spot, dynamic output, dynamic input) {
-  var horizontal = align.equals(GoJSSpot.top) || align.equals(GoJSSpot.bottom);
+go.Shape makePort(
+    String name, go.Spot align, go.Spot spot, dynamic output, dynamic input) {
+  var horizontal = align.equals(go.Spot.top) || align.equals(go.Spot.bottom);
   // the port is basically just a transparent rectangle that stretches along the side of the node,
   // and becomes colored when the mouse passes over it
-  return GoJSShape()
+  return go.Shape()
     ..fill = 'transparent' // changed to a color in the mouseEnter event handler
     ..strokeWidth = 0 // no stroke
     ..width =
-        horizontal ? nan : 8 // if not stretching horizontally, just 8 wide
+        horizontal ? go.nan : 8 // if not stretching horizontally, just 8 wide
     ..height =
-        !horizontal ? nan : 8 // if not stretching vertically, just 8 tall
+        !horizontal ? go.nan : 8 // if not stretching vertically, just 8 tall
     ..alignment = align // align the port on the main Shape
     ..stretch =
-        (horizontal ? GoJSGraphObject.horizontal : GoJSGraphObject.vertical)
+        (horizontal ? go.GraphObject.horizontal : go.GraphObject.vertical)
     ..portId = name // declare this object to be a "port"
     ..fromSpot = spot // declare where links may connect at this port
     ..fromLinkable = output // declare whether the user may draw links from here

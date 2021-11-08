@@ -4,15 +4,15 @@ description: An absolute bare-bones web app.
 #homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: '>=2.12.2 <3.0.0'
 
 dependencies:
-  js: ^0.6.1+1
+  js: ^0.6.3
   #gojs: any
   gojs:
     path: '../../'
 
 dev_dependencies:
-  build_runner: ^1.7.3
-  build_web_compilers: ^2.9.0
-  pedantic: ^1.9.0
+  build_runner: ^2.1.4
+  build_web_compilers: ^3.2.1
+  lints: ^1.0.1

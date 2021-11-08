@@ -7,4 +7,10 @@ import 'package:js/js.dart';
 external dynamic get undefined;
 
 @JS('NaN')
-external dynamic get nan;
+external num get nan;
+
+@JS('Number.isNaN')
+external bool numberIsNaN(n);
+
+@JS('Infinity')
+external dynamic get infinity;
